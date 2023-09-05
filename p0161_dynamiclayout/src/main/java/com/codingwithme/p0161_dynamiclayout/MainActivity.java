@@ -3,12 +3,14 @@ package com.codingwithme.p0161_dynamiclayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = new Button(this);
         btn.setText("Это кнопка");
-        btn.setLayoutParams(lpView);
-        linearLayout.addView(btn);
+        btn.setBackgroundColor(1);
+        linearLayout.addView(btn, lpView);
 
+        LinearLayout.LayoutParams rightGravityParams = new LinearLayout.LayoutParams(
+                LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        rightGravityParams.gravity = Gravity.RIGHT;
+
+        Button btn2 = new Button(this);
+        btn2.setText("Button2");
+        linearLayout.addView(btn2, rightGravityParams);
     }
 }
