@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "EDApp"
 include ':app'
 include ':p0161_dynamiclayout'
+include ':p0171_dynamiclayout2'
